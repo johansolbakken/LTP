@@ -8,3 +8,6 @@ Written and created by Johan Solbakken
 - React or vue frontend
 - Java Application
 - Maven for Java
+
+## Folder structure
+The basic Java Application lies in the desktop-applcation folder.
