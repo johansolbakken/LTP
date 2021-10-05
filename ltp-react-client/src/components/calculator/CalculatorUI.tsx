@@ -1,15 +1,9 @@
-import React from 'react';
-import { DiAxleCalc } from './calcs/DiAxleCalc';
+import { CalcList } from "../calclist/CalcList";
 
-interface Props {
-    onInputChange: (target: any, value: number) => void,
-    value:number
-}
-
-export const CalculatorUI: React.FC<Props> = (props) => {
+export const CalculatorUI = () => {
     return (
         <div className="calculator">
-            <DiAxleCalc />
+            <CalcList />
         </div>
     );
-}
+};

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DiAxleCalcUI } from "./DiAxleCalcUI"
 
 export const DiAxleCalc = () => {
@@ -8,43 +8,24 @@ export const DiAxleCalc = () => {
     const [deadWeight, setDeadWeight] = useState(0);
     const [ltp, setLtp] = useState(0);
 
-    const calculateLTP = () => {
+    useEffect(() => {
         if (payload === 0) {
             setLtp(0);
         } else {
             let frontPayload = axleLoad - deadWeight - 75;
             let newLtp = (frontPayload * (axleDistance / 10)) / payload;
-            setLtp(newLtp|0);
+            console.log(newLtp);
+            setLtp(Math.round(newLtp));
         }
-    }
-
-    const axleDistanceChanged = (value: number) => {
-        setAxleDistance(value);
-        calculateLTP();
-    }
-
-    const payloadChanged = (value: number) => {
-        setPayload(value);
-        calculateLTP();
-    }
-
-    const axleLoadChanged = (value: number) => {
-        setAxleLoad(value);
-        calculateLTP();
-    }
-
-    const deadWeightChanged = (value: number) => {
-        setDeadWeight(value);
-        calculateLTP();
-    }
+    }, [axleDistance, payload, axleLoad, deadWeight]);
 
     return (
-    <DiAxleCalcUI 
-        frontAxleDistanceChange={axleDistanceChanged}
-        payloadChange={payloadChanged}
-        frontAxleLoadChange={axleLoadChanged}
-        frontDeadWeightChange={deadWeightChanged}
-        ltp={ltp}
-    />
+        <DiAxleCalcUI
+            frontAxleDistanceChange={setAxleDistance}
+            payloadChange={setPayload}
+            frontAxleLoadChange={setAxleLoad}
+            frontDeadWeightChange={setDeadWeight}
+            ltp={ltp}
+        />
     );
 }
