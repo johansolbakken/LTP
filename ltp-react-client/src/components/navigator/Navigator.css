@@ -1,0 +1,25 @@
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    padding: 0.3% 3%;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 98%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li:hover {
+    background-color: hsl(0, 0%, 87%);
+}
+
+ul li a {
+    padding: 10% 50%;
+    text-decoration: none;
+    color: black;
+}

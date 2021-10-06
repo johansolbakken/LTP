@@ -1,13 +1,17 @@
-import './App.css'
-import { Calculator } from './components/calculator/Calculator';
+import './App.css';
+import { Navigator } from './components/navigator/Navigator';
 
 function App() {
 	return (
-		<div className="App">
-			<h1>LTP Calculator</h1>
-			<Calculator />
-		</div>
-	);
+        <div className="App">
+            <h1 style={{
+				background: "hsl(0, 0%, 95%)",
+				margin: "0",
+				padding: 16
+			}}>LTP Kalkulator</h1>
+            <Navigator />
+        </div>
+    );
 }
 
 export default App;
