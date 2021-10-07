@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { ETruckType } from "../trucks/truck/ETruckType";
-import Truck from "../trucks/truck/Truck";
 import { CalculatorUI } from "./CalculatorUI";
 import calculateLTP, { AllowedPayloadExceededError } from "./CalculationFormula";
 import ITruck from "../trucks/truck/ITruck";
 import { Status } from "./status/TruckStatus";
 import { VehicleCardError } from "../vehiclecard/VehicleCardErrors";
+import createDummyTruck from "../trucks/truck/TruckUtil";
 
-export function Calculator() {
-    const [truck, setTruck] = useState<ITruck>(new Truck("Min Truck", "AE13911", ETruckType.twoAxle));
+interface Props {
+    trucks: ITruck[];
+}
+
+export const Calculator: React.FC<Props> = (props) => {
+    const [truck, setTruck] = useState<ITruck>(createDummyTruck("", ""));
     const [ltp, setLtp] = useState(0);
     const [problem, setProblem] = useState<Status>(Status.NO_PROBLEM);
     
