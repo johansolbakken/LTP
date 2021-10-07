@@ -1,4 +1,20 @@
+import { ETruckType } from "../trucks/ETruckType";
+import ITruck from "../trucks/ITruck";
 import IVehicleCard from "../vehiclecard/IVehicleCard"
+
+export default function calculateLTP(truck: ITruck, payload: number) {
+    const type = truck.getType();
+
+    if (type == ETruckType.twoAxle) {
+        return diAxleLtp(truck.getVehicleCard(), payload);
+    } else if ( type == ETruckType.threeAxle) {
+        return triAxleLtp(truck.getVehicleCard(), payload);
+    } else if ( type == ETruckType.fourAxle) {
+        return tetraAxleLtp(truck.getVehicleCard(), payload);
+    } else {
+        throw new Error("Invalid truck type!");
+    }
+}
 
 /**
  * DiAxleLTP

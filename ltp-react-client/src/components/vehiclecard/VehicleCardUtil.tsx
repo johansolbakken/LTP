@@ -26,3 +26,7 @@ export const createDiAxleVehicleCard = (
         deadWeightFront, deadWeightBack
     );
 }
+
+export const createEmptyVehicleCard = () => {
+    return createVehicleCardFromValues(0,0,0,0,0,0,0,0);
+}

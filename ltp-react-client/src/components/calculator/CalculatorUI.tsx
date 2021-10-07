@@ -1,9 +1,17 @@
 import { CalcList } from "../calclist/CalcList";
+import ITruck from "../trucks/ITruck";
+import {TruckPicker} from "./input/TruckPicker";
 
-export const CalculatorUI = () => {
+interface Props {
+    ltp:number;
+    truckPickerChanged(truck: ITruck):void;
+}
+
+export const CalculatorUI: React.FC<Props> = (props) => {
     return (
         <div className="calculator">
-            <CalcList />
+            <h1>Kalkulator {props.ltp}</h1>
+            <TruckPicker onChange={props.truckPickerChanged} />
         </div>
     );
 };
