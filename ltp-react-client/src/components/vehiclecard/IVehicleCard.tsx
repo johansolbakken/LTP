@@ -1,5 +1,5 @@
 
-export interface IVehicleCard {
+export default interface IVehicleCard {
     setFrontAxleDistance(value: number): void;
     setMidAxleDistance(value: number): void;
     setBackAxleDistance(value: number): void;

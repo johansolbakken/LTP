@@ -1,4 +1,4 @@
-import { VehicleCard } from "./VehicleCard";
+import VehicleCard  from "./VehicleCard";
 
 export const createVehicleCardFromValues = (frontAxleDist: number, midAxleDist: number, backAxleDist:
     number, allowedPayload:
