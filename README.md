@@ -2,6 +2,9 @@
 
 Written and created by Johan Solbakken
 
+## The goal
+The goal of this app is to help truck drivers calculate LTP.
+
 ## Technologies
 
 - Java backend

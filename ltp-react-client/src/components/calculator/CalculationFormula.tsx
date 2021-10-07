@@ -1,5 +1,5 @@
-import { ETruckType } from "../trucks/ETruckType";
-import ITruck from "../trucks/ITruck";
+import { ETruckType } from "../trucks/truck/ETruckType";
+import ITruck from "../trucks/truck/ITruck";
 import IVehicleCard from "../vehiclecard/IVehicleCard"
 
 export default function calculateLTP(truck: ITruck, payload: number) {

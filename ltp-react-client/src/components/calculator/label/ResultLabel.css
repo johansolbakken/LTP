@@ -1,0 +1,7 @@
+.resultLabel {
+    font-weight: bold;
+    border: 1.2px black solid;
+    border-radius: 25px;
+    padding: 3em;
+    font-size: large;
+}

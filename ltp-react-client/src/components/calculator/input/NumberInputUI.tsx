@@ -1,3 +1,4 @@
+import "./NumberInput.css"
 
 interface Props {
     prompt: string,
@@ -7,10 +8,8 @@ interface Props {
 export const NumberInputUI: React.FC<Props> = (props) => {
     return (
         <div className="numberInput">
-            <span>
-                <p>{props.prompt}</p>
-                <input placeholder={props.prompt} onChange={props.onChange} />
-            </span>
+            <span>{props.prompt}</span>
+            <input placeholder={props.prompt} onChange={props.onChange} />
         </div>
     );
 }

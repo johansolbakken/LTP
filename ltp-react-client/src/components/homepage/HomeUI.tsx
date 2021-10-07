@@ -1,15 +1,13 @@
 import { MenuOption } from "./MenuOption/MenuOption";
+import "./Home.css"
 
 export const HomeUI = () => {
     return (
         <div>
-            <h1>Home</h1>
-            <div className="Menu" style={{
-                display: "flex",
-                justifyContent: "start",
-                flexWrap: "wrap",
-                width: 304
-            }}>
+            <h1>Hjem</h1>
+            <div
+                className="menu"
+            >
                 <MenuOption
                     url={"calculator"}
                     imgUrl={

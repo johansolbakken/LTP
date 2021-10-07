@@ -1,0 +1,6 @@
+.menu {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 304px;
+}

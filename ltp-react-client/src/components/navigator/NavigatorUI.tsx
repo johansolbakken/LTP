@@ -15,7 +15,7 @@ export const NavigatorUI: React.FC<Props> = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">Hjem</Link>
                         </li>
                         <li>
                             <Link to="/calculator">Kalkulator</Link>

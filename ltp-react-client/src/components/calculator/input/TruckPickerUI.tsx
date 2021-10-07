@@ -1,5 +1,5 @@
 import React from "react";
-import ITruck from "../../trucks/ITruck";
+import ITruck from "../../trucks/truck/ITruck";
 
 interface Props {
     truckList: ITruck[];
@@ -19,10 +19,14 @@ export const TruckPickerUI: React.FC<Props> = (props) => {
     
     return (
         <div className="truckPicker">
-            <h1>Truckpicker</h1>
-            <select name="Trucks" onChange={props.onChange}>
-                {listOfOptions}
-            </select>
+            <span style={{marginRight:"1em"}}>
+                Lastebil
+            </span>
+            <span>
+                <select name="Trucks" onChange={props.onChange}>
+                    {listOfOptions}
+                </select>
+            </span>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import IVehicleCard from "../vehiclecard/IVehicleCard";
+import IVehicleCard from "../../vehiclecard/IVehicleCard";
 import { ETruckType } from "./ETruckType";
 
 export default interface ITruck {

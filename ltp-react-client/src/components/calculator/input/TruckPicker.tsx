@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { ETruckType } from "../../trucks/ETruckType";
-import ITruck from "../../trucks/ITruck";
-import Truck from "../../trucks/Truck";
+import ITruck from "../../trucks/truck/ITruck";
+import createDummyTruck from "../../trucks/truck/TruckUtil";
 import {TruckPickerUI} from "./TruckPickerUI";
 
 interface Props {
@@ -10,9 +9,9 @@ interface Props {
 
 export const TruckPicker:React.FC<Props> = (props) => {
     const [trucks, setTrucks] = useState<ITruck[]>([
-        new Truck("Volvo", "VX49812", ETruckType.twoAxle),
-        new Truck("Scania", "JV33423", ETruckType.threeAxle),
-        new Truck("Majestetica", "GI696969", ETruckType.fourAxle)
+        createDummyTruck("Scania", "AX46758"),
+        createDummyTruck("Volvo", "34EE3e"),
+        createDummyTruck("Mercedes", "OP98988"),
     ]);
 
     const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

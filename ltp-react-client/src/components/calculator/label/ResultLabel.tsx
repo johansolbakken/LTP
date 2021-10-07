@@ -1,3 +1,4 @@
+import "./ResultLabel.css"
 
 interface Props {
     value: string
