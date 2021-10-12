@@ -11,6 +11,9 @@ export default class VehicleCard implements IVehicleCard {
     private deadWeights: number[];
 
     constructor(axleDistances: number[], allowedPayload: number, allowedAxleLoad: number[], deadWeights: number[]) {
+        if (axleDistances.length !== 3) throw new VCAxleDistanceError("AxleDistances should be of length 3");
+        if (allowedAxleLoad.length !== 2) throw new VCAllowedAxleLoadError("AllowedAxleLoad should be of length 2");
+        if (deadWeights.length !== 2) throw new VCDeadWeightsError("DeadWeights should be of lenght 2");
         this.validateAxleDistance(axleDistances[0]);
         this.validateAxleDistance(axleDistances[1]);
         this.validateAxleDistance(axleDistances[2]);
@@ -29,7 +32,7 @@ export default class VehicleCard implements IVehicleCard {
     }
 
     private validateAxleDistance(value: number) { if (value < 0) throw new VCAxleDistanceError("Invalid axle distance: " + value); }
-    private validatePayload(value: number) { if (value < 0) throw new VCAllowedPayloadError("Invalid payload: " + value); }
+    private validatePayload(value: number) { if (value <= 0) throw new VCAllowedPayloadError("Invalid payload: " + value); }
     private validateAxleLoad(value: number) { if (value < 0) throw new VCAllowedAxleLoadError("Invalid axle load: " + value); }
     private validateDeadWeight(value: number) { if (value < 0) throw new VCDeadWeightsError("Invalid dead weight: " + value); }
 

@@ -3,6 +3,7 @@ import { Calculator } from "../calculator/Calculator";
 import { Home } from "../homepage/Home";
 import ITruck from "../trucks/truck/ITruck";
 import { TrucksPage } from "../trucks/TrucksPage";
+import { User } from "../user/User";
 import { NavigatorUI } from "./NavigatorUI";
 
 export const Navigator = () => {
@@ -12,7 +13,7 @@ export const Navigator = () => {
     const calc = <Calculator trucks={truckList} />;
     const home = <Home />;
     const trucks = <TrucksPage updatedTrucks={updateTrucks} />;
-    const user = <div></div>;
+    const user = <User />;
     return (
         <NavigatorUI home={home} user={user} trucks={trucks} calc={calc} />
     );
