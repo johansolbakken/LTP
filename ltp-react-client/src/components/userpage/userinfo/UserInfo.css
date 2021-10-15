@@ -1,0 +1,27 @@
+
+.userInfo {
+    background: aqua;
+}
+
+.profile-pic {
+    background: orange;
+}
+
+.my-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.first-col {
+    display: flex;
+    justify-self: start;
+}
+
+.second-col {
+display: flex;
+    justify-self: end;
+}

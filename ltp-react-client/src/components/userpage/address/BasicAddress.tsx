@@ -1,14 +1,16 @@
-export default class Address {
+import Address from "./Address";
+
+export default class BasicAddress implements Address {
     private street: string;
     private city: string;
     private zip: number;
     private country: string;
 
-    constructor() {
-        this.street = "";
-        this.city = "";
-        this.zip = 0;
-        this.country = "";
+    constructor(street: string, city: string, zip: number, country: string) {
+        this.street = street;
+        this.city = city;
+        this.zip = zip;
+        this.country = country;
     }
 
     public getStreet = () => this.street;
@@ -29,7 +31,14 @@ export default class Address {
         this.country = country;
     };
 
-    public toString():string {
-        return "Gate: " + this.street + "\n";
+    public toString(): JSX.Element {
+        return (
+            <div>
+                <div>{"Gate: " + this.street}</div>
+                <div>{"Poststed: " + this.city}</div>
+                <div>{"Postkode: " + this.zip}</div>
+                <div>{"Land: " + this.country}</div>
+            </div>
+        );
     }
 }
