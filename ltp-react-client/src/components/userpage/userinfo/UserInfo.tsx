@@ -3,9 +3,11 @@ import "./UserInfo.css"
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import { Button } from "../../button/Button";
 
 interface Props {
     user: User
+    editUserButtonClicked():void;
 }
 
 export const UserInfo: React.FC<Props> = (props) => {
@@ -37,6 +39,7 @@ export const UserInfo: React.FC<Props> = (props) => {
                     <span className={"second-col"}>{props.user.getAddress().toString()}</span>
                 </div>
             </div>
+        <Button text="Rediger" onClick={props.editUserButtonClicked} />
         </div>
     );
 }

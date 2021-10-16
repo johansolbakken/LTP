@@ -1,10 +1,13 @@
 
 .userInfo {
-    background: aqua;
+    padding: 1em;
+    border: 1px #777 solid;
 }
 
 .profile-pic {
-    background: orange;
+    border: 1px #333 solid;
+    border-radius: 50%;
+    
 }
 
 .my-table {
@@ -14,6 +17,7 @@
 
 .row {
     display: flex;
+    justify-content: space-between;
 }
 
 .first-col {
@@ -22,6 +26,7 @@
 }
 
 .second-col {
-display: flex;
-    justify-self: end;
+    display: flex;
+    justify-content: start;
+    padding-left: 1em;
 }
