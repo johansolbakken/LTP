@@ -1,5 +1,5 @@
 import React from "react";
-import ITruck from "../../trucks/truck/ITruck";
+import ITruck from '../../../model/truck/ITruck';
 
 interface Props {
     truckList: ITruck[];

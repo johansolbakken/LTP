@@ -1,16 +1,27 @@
-import User from "../user/User";
 import "./UserInfo.css"
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { Button } from "../../button/Button";
+import { Button } from "../../input/button/Button";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import Address from "../../../model/address/Address";
+import BasicAddress from "../../../model/address/BasicAddress";
 
 interface Props {
-    user: User
     editUserButtonClicked():void;
 }
 
 export const UserInfo: React.FC<Props> = (props) => {
+    const [address, setAddress] = useState<Address>(new BasicAddress("", "", 0, ""));
+    const state:any = useSelector((state)=>state);
+    const {user} = state;
+
+    useEffect(() => {
+        setAddress(new BasicAddress(user.street, user.city, Number(user.zip), user.country));
+    }, [user.street, user.zip, user.country, user.city]);
+
+
     return (
         <div className={"userInfo"}>
             <img
@@ -20,23 +31,23 @@ export const UserInfo: React.FC<Props> = (props) => {
             <div className={"my-table"}>
                 <div className={"row"}>
                     <span className={"first-col"}>Username</span>
-                    <span className={"second-col"}>{props.user.getUsername()}</span>
+                    <span className={"second-col"}>{user.username}</span>
                 </div>
                 <div className={"row"}>
                     <span className={"first-col"}>Name</span>
-                    <span className={"second-col"}>{props.user.getName()}</span>
+                    <span className={"second-col"}>{user.name}</span>
                 </div>
                 <div className={"row"}>
                     <span className={"first-col"}>Email</span>
-                    <span className={"second-col"}>{props.user.getEmail()}</span>
+                    <span className={"second-col"}>{user.email}</span>
                 </div>
                 <div className={"row"}>
                     <span className={"first-col"}>Phone</span>
-                    <span className={"second-col"}>{props.user.getPhone()}</span>
+                    <span className={"second-col"}>{user.phone}</span>
                 </div>
                 <div className={"row"}>
                     <span className={"first-col"}>Address</span>
-                    <span className={"second-col"}>{props.user.getAddress().toString()}</span>
+                    <span className={"second-col"}>{user.zip}</span>
                 </div>
             </div>
         <Button text="Rediger" onClick={props.editUserButtonClicked} />

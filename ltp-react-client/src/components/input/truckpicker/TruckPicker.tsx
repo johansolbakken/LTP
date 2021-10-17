@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ITruck from "../../trucks/truck/ITruck";
-import createDummyTruck from "../../trucks/truck/TruckUtil";
+import ITruck from "../../../model/truck/ITruck";
+import createDummyTruck from "../../../model/truck/TruckUtil";
 import {TruckPickerUI} from "./TruckPickerUI";
 
 interface Props {

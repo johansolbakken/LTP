@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import ITruck from "./truck/ITruck";
-import createDummyTruck from "./truck/TruckUtil";
+import { useSelector } from "react-redux";
+import ITruck from "../../model/truck/ITruck";
+import { TruckObject } from "../../model/truck/TruckObject";
+import createDummyTruck, { createTruckFromObject } from "../../model/truck/TruckUtil";
 import { TrucksPageUI } from "./TrucksPageUI";
 
 interface Props {
-    updatedTrucks: (trucks: ITruck[]) => void;
 }
 
 export interface TruckInfo {
@@ -13,23 +14,21 @@ export interface TruckInfo {
 }
 
 export const TrucksPage: React.FC<Props> = (props) => {
-    const [trucks, setTrucks] = useState<ITruck[]>([
-        createDummyTruck("Scania", "AX46758"),
-        createDummyTruck("Volvo", "34EE3e"),
-        createDummyTruck("Mercedes", "OP98988"),
-    ]);
+    const state:any = useSelector((state) => state);
+    const listOfTrucks:TruckObject[] = state.listOfTrucks;
+    const [trucks, setTrucks] = useState<ITruck[]>([]);
 
-    useEffect(() => {
-        props.updatedTrucks(trucks);
-        console.log(trucks);
-    }, [trucks]);
+    useEffect(()=>{
+        const list: ITruck[] = [];
+        for (let i = 0; i < listOfTrucks.length; i++) {
+            list.push(createTruckFromObject(listOfTrucks[i]));
+        }
+        setTrucks(list);
+    }, [listOfTrucks])
 
     const onClick = () => {
-        const truck2 = [];
-        for (let i = 0; i < trucks.length; i++) {
-            truck2.push(trucks[i]);
-        }
-        truck2.push(
+        const list: ITruck[] = [...trucks];
+        list.push(
             createDummyTruck(
                 "Truck " + Math.round(Math.random() * 100),
                 "XC" +
@@ -45,7 +44,7 @@ export const TrucksPage: React.FC<Props> = (props) => {
                     Math.round(10 * Math.random())
             )
         );
-        setTrucks(truck2);
+        setTrucks(list);
     };
 
     return <TrucksPageUI trucks={trucks} onClick={onClick} />;

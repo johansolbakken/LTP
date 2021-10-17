@@ -28,5 +28,5 @@ export const createDiAxleVehicleCard = (
 }
 
 export const createEmptyVehicleCard = () => {
-    return createVehicleCardFromValues(0,0,0,0,0,0,0,0);
+    return createVehicleCardFromValues(1,1,1,1,1,1,1,1);
 }

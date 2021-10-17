@@ -1,4 +1,4 @@
-import ITruck from "../../trucks/truck/ITruck";
+import ITruck from "../../../model/truck/ITruck";
 import { TruckStatusUI } from "./TruckStatusUI";
 
 interface Props {

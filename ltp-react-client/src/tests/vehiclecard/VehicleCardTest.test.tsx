@@ -1,5 +1,5 @@
-import VehicleCard from "../../components/vehiclecard/VehicleCard";
-import { VCAllowedAxleLoadError, VCAllowedPayloadError, VCAxleDistanceError, VCDeadWeightsError } from "../../components/vehiclecard/VehicleCardErrors";
+import VehicleCard from "../../model/vehiclecard/VehicleCard";
+import { VCAllowedAxleLoadError, VCAllowedPayloadError, VCAxleDistanceError, VCDeadWeightsError } from "../../model/vehiclecard/VehicleCardErrors";
 
 test("Test constructor", () => {
     

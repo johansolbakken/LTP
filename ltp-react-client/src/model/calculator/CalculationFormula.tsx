@@ -1,27 +1,21 @@
-import { ETruckType } from "../trucks/truck/ETruckType";
-import ITruck from "../trucks/truck/ITruck";
+import { ETruckType } from "../truck/ETruckType";
+import ITruck from "../truck/ITruck";
 import IVehicleCard from "../vehiclecard/IVehicleCard"
 
 export default function calculateLTP(truck: ITruck, payload: number) {
     const type = truck.getType();
 
-    if (type == ETruckType.twoAxle) {
+    if (type === ETruckType.twoAxle) {
         return diAxleLtp(truck.getVehicleCard(), payload);
-    } else if ( type == ETruckType.threeAxle) {
+    } else if ( type === ETruckType.threeAxle) {
         return triAxleLtp(truck.getVehicleCard(), payload);
-    } else if ( type == ETruckType.fourAxle) {
+    } else if ( type === ETruckType.fourAxle) {
         return tetraAxleLtp(truck.getVehicleCard(), payload);
     } else {
         throw new Error("Invalid truck type!");
     }
 }
 
-/**
- * DiAxleLTP
- * @param vc Vehicle card
- * @param payload Payload
- * @returns LTP in cm
- */
 export const diAxleLtp = (vc: IVehicleCard, payload: number) => {
     if (payload <= 0) {
         throw new Error("Payload is less than 0");
@@ -57,12 +51,6 @@ export const triAxleLtp = (vc: IVehicleCard, payload: number) => {
 
 }
 
-/**
- * TetraAxleLTP
- * @param vc Vehicle card
- * @param payload Payload
- * @returns LTP in cm
- */
 export const tetraAxleLtp = (vc: IVehicleCard, payload: number) => {
     if (payload <= 0) {
         throw new Error("Payload is less than 0");

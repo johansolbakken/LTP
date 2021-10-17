@@ -1,5 +1,5 @@
-import IVehicleCard from "../../vehiclecard/IVehicleCard";
-import { createEmptyVehicleCard } from "../../vehiclecard/VehicleCardUtil";
+import IVehicleCard from "../vehiclecard/IVehicleCard";
+import { createEmptyVehicleCard } from "../vehiclecard/VehicleCardUtil";
 import { ETruckType } from "./ETruckType";
 import ITruck from "./ITruck";
 

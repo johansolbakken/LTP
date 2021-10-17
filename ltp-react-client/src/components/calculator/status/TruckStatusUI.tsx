@@ -1,4 +1,4 @@
-import ITruck from "../../trucks/truck/ITruck";
+import ITruck from "../../../model/truck/ITruck";
 import { TruckSummary } from "../../trucks/ITruckViewer/TruckSummary";
 import { Status } from "./TruckStatus";
 import "./TruckStatus.css";

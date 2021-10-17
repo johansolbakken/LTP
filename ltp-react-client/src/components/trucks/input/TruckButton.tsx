@@ -1,4 +1,4 @@
-import ITruck from "../truck/ITruck";
+import ITruck from "../../../model/truck/ITruck";
 
 interface Props {
     name: string;

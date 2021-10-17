@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { TruckButton } from "./input/TruckButton";
-import ITruck from "./truck/ITruck";
+import ITruck from "../../model/truck/ITruck";
 import "./TrucksPage.css";
 
 interface Props {
