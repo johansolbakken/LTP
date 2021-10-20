@@ -4,7 +4,7 @@ const reducer = (state = {
     license: "no license",
     type:2,
     axleDistances: [1, 1, 1],
-    allowedPayload: 0,
+    allowedPayload: 1,
     axleLoad: [1, 1],
     deadWeight: [1, 1]
 }, action) => {

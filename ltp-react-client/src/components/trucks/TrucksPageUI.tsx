@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { TruckButton } from "./input/TruckButton";
 import ITruck from "../../model/truck/ITruck";
 import "./TrucksPage.css";
+import {TruckEditor} from "./truckeditor/TruckEditor";
 
 interface Props {
     trucks: ITruck[];
@@ -51,6 +52,7 @@ export const TrucksPageUI: React.FC<Props> = (props) => {
             <h1>Lastebiler</h1>
             <button onClick={props.onClick}>Add</button>
             <table>{table}</table>
+            <TruckEditor />
         </div>
     );
 };
