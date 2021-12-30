@@ -1,16 +1,12 @@
 # LTP App Project
 
-Written and created by Johan Solbakken
+Last updated: 30/12-2021
+
+A project by Johan Solbakken
 
 ## The goal
-The goal of this app is to help truck drivers calculate LTP.
+The goal of this project is to create an application that will aid truck drivers with calculating (nor.: laste-tyngde-punkt).
 
 ## Technologies
 
-- Java backend
-- React or vue frontend
-- Java Application
-- Maven for Java
-
 ## Folder structure
-The basic Java Application lies in the desktop-applcation folder.
